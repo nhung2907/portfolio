@@ -1,0 +1,355 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+/* ── Bảng màu: "Tuyết" (trắng tuyết) & "Nhung" (nhung hồng trầm) ── */
+:root {
+  --bg: #fbf8f5;
+  --bg-2: #f5eee9;
+  --surface: rgb(255 253 251 / 0.72);
+  --surface-strong: #fffdfb;
+  --ink: #2b1f27;
+  --ink-soft: #6d5d67;
+  --ink-faint: #9a8a94;
+  --line: rgb(110 50 80 / 0.12);
+  --velvet: #8e3b5a;
+  --velvet-2: #b45c7d;
+  --velvet-deep: #5a1f38;
+  --on-velvet: #fffafc;
+  --frost: #5f78a3;
+  --mist: #f5e4eb;
+  --gold: #b88b5c;
+  --glow-1: #f7d7e3;
+  --glow-2: #dde6f5;
+  --glow-3: #f3e6d6;
+  --flake: rgb(180 92 125 / 0.45);
+  --shadow: 0 24px 48px -28px rgb(92 34 62 / 0.35), 0 2px 6px -2px rgb(92 34 62 / 0.06);
+  --shadow-lg: 0 40px 80px -40px rgb(92 34 62 / 0.45);
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  --bg: #141017;
+  --bg-2: #1b141e;
+  --surface: rgb(38 28 42 / 0.62);
+  --surface-strong: #221923;
+  --ink: #f6eef2;
+  --ink-soft: #c0b1ba;
+  --ink-faint: #8e7f88;
+  --line: rgb(255 220 236 / 0.1);
+  --velvet: #ec9cb8;
+  --velvet-2: #c96f92;
+  --velvet-deep: #4a1830;
+  --on-velvet: #1b0e15;
+  --frost: #a7bce2;
+  --mist: rgb(236 156 184 / 0.12);
+  --gold: #dcb88f;
+  --glow-1: rgb(142 59 90 / 0.4);
+  --glow-2: rgb(70 90 150 / 0.28);
+  --glow-3: rgb(120 70 60 / 0.18);
+  --flake: rgb(255 255 255 / 0.85);
+  --shadow: 0 24px 48px -28px rgb(0 0 0 / 0.7), 0 2px 6px -2px rgb(0 0 0 / 0.3);
+  --shadow-lg: 0 40px 80px -40px rgb(0 0 0 / 0.8);
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-2: var(--bg-2);
+  --color-surface: var(--surface);
+  --color-surface-strong: var(--surface-strong);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-ink-faint: var(--ink-faint);
+  --color-line: var(--line);
+  --color-velvet: var(--velvet);
+  --color-velvet-2: var(--velvet-2);
+  --color-velvet-deep: var(--velvet-deep);
+  --color-on-velvet: var(--on-velvet);
+  --color-frost: var(--frost);
+  --color-mist: var(--mist);
+  --color-gold: var(--gold);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-serif);
+  --shadow-soft: var(--shadow);
+  --shadow-deep: var(--shadow-lg);
+}
+
+/* ── Nền ── */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 96px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body), system-ui, sans-serif;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+::selection {
+  background: var(--velvet);
+  color: var(--on-velvet);
+}
+
+/* Lớp hạt mịn như vải nhung */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.32;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.35 0 0 0 0 0.2 0 0 0 0 0.28 0 0 0 0.09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+[data-theme="dark"] body::after {
+  mix-blend-mode: screen;
+  opacity: 0.18;
+}
+
+.font-display {
+  font-variation-settings: "SOFT" 100, "WONK" 0;
+}
+
+/* ── Thành phần dùng chung (trong layer để class tiện ích của Tailwind ghi đè được) ── */
+@layer components {
+  .container-x {
+    width: 100%;
+    max-width: 1180px;
+    margin-inline: auto;
+    padding-inline: 16px;
+  }
+
+  @media (min-width: 640px) {
+    .container-x {
+      padding-inline: 28px;
+    }
+  }
+
+  .glass {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(14px) saturate(1.2);
+    -webkit-backdrop-filter: blur(14px) saturate(1.2);
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.85rem 1.45rem;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    line-height: 1;
+    transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s ease,
+      background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease;
+  }
+
+  .btn:hover {
+    transform: translateY(-2px);
+  }
+
+  .btn svg {
+    transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .btn:hover svg {
+    transform: translateX(3px);
+  }
+
+  .btn-primary {
+    color: var(--on-velvet);
+    background: linear-gradient(135deg, var(--velvet) 0%, var(--velvet-2) 100%);
+    box-shadow: 0 14px 30px -14px var(--velvet), inset 0 1px 0 rgb(255 255 255 / 0.25);
+  }
+
+  .btn-primary:hover {
+    box-shadow: 0 20px 36px -14px var(--velvet), inset 0 1px 0 rgb(255 255 255 / 0.25);
+  }
+
+  .btn-ghost {
+    color: var(--ink);
+    background: var(--surface-strong);
+    border: 1px solid var(--line);
+  }
+
+  .btn-ghost:hover {
+    color: var(--velvet);
+    border-color: color-mix(in srgb, var(--velvet) 45%, transparent);
+  }
+
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.55rem 1rem;
+    border-radius: 999px;
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+    background: var(--surface-strong);
+    border: 1px solid var(--line);
+    transition: color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+  }
+
+  .chip:hover {
+    color: var(--velvet);
+    border-color: color-mix(in srgb, var(--velvet) 40%, transparent);
+    transform: translateY(-2px);
+  }
+
+  /* Khung ảnh hình vòm */
+  .arch {
+    border-radius: 50% 50% 32px 32px / 40% 40% 32px 32px;
+  }
+
+  /* Đường viền gradient khi hover thẻ */
+  .card-hover {
+    position: relative;
+    transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.5s ease;
+  }
+
+  .card-hover::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(140deg, var(--velvet), transparent 40%, transparent 60%, var(--frost));
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+  }
+
+  .card-hover:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .card-hover:hover::before {
+    opacity: 1;
+  }
+}
+
+/* ── Chuyển động ── */
+.js [data-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.9s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.9s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition-delay: var(--delay, 0ms);
+}
+
+.js [data-reveal].is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  animation: marquee 48s linear infinite;
+}
+
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spin-slow {
+  animation: spin-slow 28s linear infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.float {
+  animation: float 7s ease-in-out infinite;
+}
+
+@keyframes snow {
+  0% {
+    transform: translate3d(0, -10vh, 0);
+    opacity: 0;
+  }
+  10% {
+    opacity: var(--o, 0.7);
+  }
+  90% {
+    opacity: var(--o, 0.7);
+  }
+  100% {
+    transform: translate3d(var(--drift, 30px), 105vh, 0);
+    opacity: 0;
+  }
+}
+
+.snowflake {
+  position: absolute;
+  top: 0;
+  border-radius: 999px;
+  background: var(--flake);
+  filter: blur(0.6px);
+  animation: snow var(--dur, 18s) linear infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+@keyframes pulse-dot {
+  0% {
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--velvet) 55%, transparent);
+  }
+  100% {
+    box-shadow: 0 0 0 10px transparent;
+  }
+}
+
+.pulse-dot {
+  animation: pulse-dot 2s ease-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .marquee-track,
+  .spin-slow,
+  .float,
+  .snowflake,
+  .pulse-dot {
+    animation: none;
+  }
+
+  .snowflake {
+    display: none;
+  }
+
+  .js [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+}
