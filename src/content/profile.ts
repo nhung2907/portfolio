@@ -8,6 +8,8 @@ import ipday1 from "@/assets/projects/ipday-1.jpg";
 import ipday2 from "@/assets/projects/ipday-2.jpg";
 import virtualFigures from "@/assets/projects/virtual-figures.jpg";
 import ipchallenge from "@/assets/projects/ipchallenge.jpg";
+import flowers from "@/assets/interests/flowers.jpg";
+import photography from "@/assets/interests/photography.jpg";
 
 export const profile = {
   name: "Đỗ Tuyết Nhung",
@@ -185,7 +187,11 @@ export const interests: {
   tag: string;
   title: string;
   paragraphs: string[];
-  items: { icon: IconName; label: string }[];
+  items: {
+    icon: IconName;
+    label: string;
+    photo?: { src: StaticImageData; alt: string };
+  }[];
 } = {
   tag: "A little more personal",
   title: "Những điều *mình yêu thích*",
@@ -194,10 +200,18 @@ export const interests: {
     "Mình bị cuốn hút bởi cả hai thế giới: một bên là cấu trúc và logic, một bên là cảm xúc và cái đẹp. Có lẽ vì vậy mà mình luôn muốn những gì mình làm ra vừa rõ ràng, vừa có hơi ấm.",
   ],
   items: [
-    { icon: "flower", label: "Hoa" },
-    { icon: "camera", label: "Chụp ảnh" },
+    {
+      icon: "flower",
+      label: "Hoa",
+      photo: { src: flowers, alt: "Những bó hoa Tuyết Nhung yêu thích" },
+    },
+    {
+      icon: "camera",
+      label: "Chụp ảnh",
+      photo: { src: photography, alt: "Tuyết Nhung chụp ảnh selfie qua gương" },
+    },
     { icon: "book", label: "Đọc sách" },
-    { icon: "music", label: "Nghe nhạc" },
+    { icon: "dance", label: "Múa" },
     { icon: "heart", label: "Những điều nhỏ xinh" },
   ],
 };

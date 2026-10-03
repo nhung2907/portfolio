@@ -84,6 +84,13 @@ const paths = {
       <circle cx="18" cy="16" r="3" />
     </>
   ),
+  dance: (
+    <>
+      <circle cx="13" cy="4" r="2" />
+      <path d="m4 9 5-2 4 3 5-4" />
+      <path d="m13 10-1 5 3 6m-3-6-4 3" />
+    </>
+  ),
   flower: (
     <>
       <circle cx="12" cy="12" r="3" />

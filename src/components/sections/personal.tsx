@@ -28,14 +28,37 @@ export function Interests() {
               key={item.label}
               data-reveal
               style={delay((i % 3) * 90)}
-              className={`glass card-hover group flex aspect-square flex-col justify-between rounded-[28px] p-5 ${
+              className={`glass card-hover group relative flex aspect-square flex-col justify-between overflow-hidden rounded-[28px] p-5 ${
                 i % 3 === 1 ? "sm:translate-y-6" : ""
               }`}
             >
-              <span className="grid size-12 place-items-center rounded-2xl bg-mist text-velvet transition-all duration-500 group-hover:bg-velvet group-hover:text-on-velvet">
+              {item.photo && (
+                <>
+                  <Image
+                    src={item.photo.src}
+                    alt={item.photo.alt}
+                    fill
+                    placeholder="blur"
+                    sizes="(min-width: 1024px) 220px, (min-width: 640px) 30vw, 46vw"
+                    className="object-cover transition-transform duration-[1.2s] ease-out group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
+                </>
+              )}
+              <span
+                className={`relative grid size-12 place-items-center rounded-2xl transition-all duration-500 ${
+                  item.photo
+                    ? "bg-white/80 text-velvet backdrop-blur"
+                    : "bg-mist text-velvet group-hover:bg-velvet group-hover:text-on-velvet"
+                }`}
+              >
                 <Icon name={item.icon} size={22} />
               </span>
-              <span className="font-display text-[1.15rem] leading-snug text-ink">
+              <span
+                className={`relative font-display text-[1.15rem] leading-snug ${
+                  item.photo ? "text-white" : "text-ink"
+                }`}
+              >
                 {item.label}
               </span>
             </li>
