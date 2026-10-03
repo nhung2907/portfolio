@@ -190,13 +190,12 @@ export const interests: {
   tag: "A little more personal",
   title: "Những điều *mình yêu thích*",
   paragraphs: [
-    "Ngoài giờ học, mình thích đi đây đó, lưu lại những khoảnh khắc nhỏ và dành thời gian ngắm những thiết kế đẹp để hiểu vì sao chúng đẹp.",
+    "Ngoài giờ học, mình thích đi đây đó, lưu lại những khoảnh khắc nhỏ và dành thời gian bên những bông hoa — thứ luôn khiến một ngày bình thường trở nên dịu dàng hơn.",
     "Mình bị cuốn hút bởi cả hai thế giới: một bên là cấu trúc và logic, một bên là cảm xúc và cái đẹp. Có lẽ vì vậy mà mình luôn muốn những gì mình làm ra vừa rõ ràng, vừa có hơi ấm.",
   ],
   items: [
-    { icon: "compass", label: "Du lịch & khám phá" },
+    { icon: "flower", label: "Hoa" },
     { icon: "camera", label: "Chụp ảnh" },
-    { icon: "pen", label: "Thiết kế" },
     { icon: "book", label: "Đọc sách" },
     { icon: "music", label: "Nghe nhạc" },
     { icon: "heart", label: "Những điều nhỏ xinh" },
