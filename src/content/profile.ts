@@ -16,7 +16,7 @@ export const profile = {
   greeting: "Xin chào, mình là",
   roles: [
     "Sinh viên Đại học Ngoại thương",
-    "UX/UI & Product thinking",
+    "Tài chính Quốc tế · CLB IPC",
     "Thích biến ý tưởng thành trải nghiệm",
   ],
   quote:
@@ -53,7 +53,7 @@ export const about = {
   paragraphs: [
     "Mình bị cuốn hút bởi những điều vừa có chiều sâu, vừa chạm đến cảm xúc — một ý tưởng cộng đồng được vun đắp chỉn chu, một câu chuyện được kể bằng sự tinh tế, hay những con số lặng lẽ phản ánh hành vi và xu hướng của con người. Có lẽ vì thế mà mình luôn tìm thấy bản thân ở nơi giao thoa giữa tài chính, dữ liệu, cộng đồng và sáng tạo.",
     "Mình từng là thành viên Ban Chuyên môn của Câu lạc bộ Sở hữu Trí tuệ IPC – Trường Đại học Ngoại thương. Quãng thời gian ấy cho mình cơ hội kết nối với nhiều người, xây dựng mạng lưới quan hệ đối ngoại, đồng thời rèn cho mình tinh thần làm việc nhóm và kinh nghiệm tổ chức những sự kiện quy mô lớn. Điều mình trân trọng nhất là khoảnh khắc một ý tưởng không chỉ dừng ở “hay”, mà thật sự chạm đến ai đó.",
-    "Ở dự án JobAlign của học phần TIN314, mình cùng nhóm đi từ một vấn đề rất thật của sinh viên — không biết hồ sơ của mình khớp với công việc đến đâu — thành một sản phẩm có cấu trúc. Mình phụ trách viết URD, thiết kế wireframe và giao diện, và mình thích nhất khoảnh khắc những dòng mô tả khô khan dần trở thành các màn hình có thể chạm vào.",
+    "Ở giảng đường, chuyên ngành Tài chính Quốc tế dạy mình nhìn mọi thứ bằng sự chặt chẽ của những con số; còn ngoại ngữ mở cho mình cánh cửa đến với những nền văn hoá và cách nghĩ khác. Mình muốn mang cả hai điều ấy theo trên hành trình phía trước — đủ lý trí để hiểu vấn đề thật kỹ, và đủ ấm áp để những gì mình làm ra luôn có ý nghĩa với ai đó.",
   ],
   process: [
     {
