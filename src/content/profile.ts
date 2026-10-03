@@ -10,6 +10,10 @@ import virtualFigures from "@/assets/projects/virtual-figures.jpg";
 import ipchallenge from "@/assets/projects/ipchallenge.jpg";
 import flowers from "@/assets/interests/flowers.jpg";
 import photography from "@/assets/interests/photography.jpg";
+import dance from "@/assets/interests/dance.jpg";
+import cooking from "@/assets/interests/cooking.jpg";
+import reading from "@/assets/interests/reading.jpg";
+import littleThings from "@/assets/interests/little-things.jpg";
 
 export const profile = {
   name: "Đỗ Tuyết Nhung",
@@ -190,7 +194,7 @@ export const interests: {
   items: {
     icon: IconName;
     label: string;
-    photo?: { src: StaticImageData; alt: string };
+    photo?: { src: StaticImageData; alt: string; position?: string };
   }[];
 } = {
   tag: "A little more personal",
@@ -210,9 +214,30 @@ export const interests: {
       label: "Chụp ảnh",
       photo: { src: photography, alt: "Tuyết Nhung chụp ảnh selfie qua gương" },
     },
-    { icon: "book", label: "Đọc sách" },
-    { icon: "dance", label: "Múa" },
-    { icon: "heart", label: "Những điều nhỏ xinh" },
+    {
+      icon: "book",
+      label: "Đọc sách",
+      photo: { src: reading, alt: "Cuốn “Hai số phận” (Kane & Abel) của Jeffrey Archer" },
+    },
+    {
+      icon: "dance",
+      label: "Múa",
+      photo: { src: dance, alt: "Tuyết Nhung trong trang phục múa áo dài xanh" },
+    },
+    {
+      icon: "cookingPot",
+      label: "Nấu ăn",
+      photo: { src: cooking, alt: "Những bữa cơm Tuyết Nhung tự nấu" },
+    },
+    {
+      icon: "heart",
+      label: "Những điều nhỏ xinh",
+      photo: {
+        src: littleThings,
+        alt: "Chiếc vòng charm Hello Kitty của Tuyết Nhung",
+        position: "28% 50%",
+      },
+    },
   ],
 };
 

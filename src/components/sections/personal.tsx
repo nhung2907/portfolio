@@ -37,6 +37,7 @@ export function Interests() {
                   <Image
                     src={item.photo.src}
                     alt={item.photo.alt}
+                    style={{ objectPosition: item.photo.position }}
                     fill
                     placeholder="blur"
                     sizes="(min-width: 1024px) 220px, (min-width: 640px) 30vw, 46vw"
