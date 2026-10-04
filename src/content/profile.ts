@@ -1,5 +1,5 @@
 // Toàn bộ nội dung của trang nằm ở file này — sửa chữ ở đây, giao diện tự cập nhật.
-// Ảnh: thả file vào public/images với đúng tên (avatar.jpg, photo1.jpg …) là trang tự hiển thị,
+// Ảnh: thả file vào public/images với đúng tên (avatar.jpg) là trang tự hiển thị,
 // chưa có ảnh thì trang dùng hình minh hoạ thay thế.
 
 import type { StaticImageData } from "next/image";
@@ -30,7 +30,7 @@ export const profile = {
   intro:
     "Mình là sinh viên K63 Trường Đại học Ngoại thương, chuyên ngành Tài chính Quốc tế. Mình quan tâm đến tài chính, ngoại ngữ và những ý tưởng có thể tạo ra giá trị thực tế cho cộng đồng. Với mình, một hành trình đẹp không chỉ nằm ở thành tích, mà còn ở cách mình học hỏi, kết nối với mọi người và biến những điều mình tin tưởng thành điều gì đó hữu ích.",
   avatar: "/images/avatar.jpg",
-  heroBadges: ["URD", "Wireframe", "UI Design"],
+  heroBadges: ["Tài chính", "Ngoại ngữ", "Tổ chức sự kiện"],
 };
 
 export const nav = [
@@ -38,19 +38,18 @@ export const nav = [
   { id: "identity", label: "Mình là ai" },
   { id: "projects", label: "Dự án" },
   { id: "interests", label: "Sở thích" },
-  { id: "gallery", label: "Gallery" },
   { id: "contact", label: "Liên hệ" },
 ];
 
 export const marquee = [
-  "Thiết kế trải nghiệm",
-  "Wireframe",
-  "UI Design",
-  "User Requirements",
-  "Product thinking",
-  "Dữ liệu",
-  "Du lịch & khám phá",
-  "Storytelling",
+  "Tài chính Quốc tế",
+  "Ngoại ngữ",
+  "Sở hữu trí tuệ",
+  "Tổ chức sự kiện",
+  "Kết nối cộng đồng",
+  "Múa",
+  "Nấu ăn",
+  "Những điều nhỏ xinh",
 ];
 
 export const about = {
@@ -238,19 +237,6 @@ export const interests: {
         position: "28% 50%",
       },
     },
-  ],
-};
-
-export const gallery = {
-  tag: "Photo corner",
-  title: "Một góc nhỏ cho *những khoảnh khắc*",
-  text: "Nơi mình lưu lại những khung cảnh mình yêu thích — một chút ánh sáng, một chút yên bình và những điều rất đời thường nhưng đẹp theo cách riêng.",
-  photos: [
-    { src: "/images/photo1.jpg", caption: "Ánh sáng buổi sớm" },
-    { src: "/images/photo2.jpg", caption: "Một góc phố quen" },
-    { src: "/images/photo3.jpg", caption: "Trên những chuyến đi" },
-    { src: "/images/photo4.jpg", caption: "Chiều muộn" },
-    { src: "/images/photo5.jpg", caption: "Những điều nhỏ xinh" },
   ],
 };
 
